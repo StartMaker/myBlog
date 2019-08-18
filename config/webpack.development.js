@@ -17,16 +17,16 @@ const  config = webpackMerge(baseConfig, {
         libraryTarget: 'var',
         library: '_dll_vendors'
     },
-    // devServer: {
-    //     contentBase: path.join(__dirname, 'dist'),
-    //     hot: true,
-    //     host: '0.0.0.0',
-    //     progress: true,
-    //     inline: true,
-    //     port: 3000,
-    //     compress: true,
-    //     historyApiFallback: true
-    // },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        hot: true,
+        host: '192.168.0.104',
+        progress: true,
+        inline: true,
+        port: 3000,
+        compress: true,
+        historyApiFallback: true
+    },
     entry: {
         client: [path.resolve(__dirname, "../client/render/development")]
     },
@@ -58,6 +58,10 @@ const  config = webpackMerge(baseConfig, {
                         options: {
                             plugins: [
                                 new LessPluginFunctions()
+                            ],
+                            paths:[
+                                path.join(__dirname, '../client/src'),
+                                path.join(__dirname, '../node_modules')
                             ],
                             javascriptEnabled: true
                         }
@@ -109,7 +113,7 @@ const  config = webpackMerge(baseConfig, {
         // new CleanWebpackPlugin(['dist'],{
         //     root: path.resolve(__dirname, '..')
         // }),
-        // new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
     ]
 });

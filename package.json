@@ -1,8 +1,9 @@
 {
   "name": "myblog",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --config=./config/webpack.development.js",
     "start": "nodemon ./server/src/development.js",
     "build": "webpack --config=./config/webpack.production.server.js&&webpack --config=./config/webpack.production.client.js",
     "test:build": "nodemon ./server/src/production.js",
@@ -104,6 +105,7 @@
     "koa-session": "^5.12.2",
     "koa-static": "^5.0.0",
     "koa-stream": "^0.2.0",
+    "koa2-connect-history-api-fallback": "^0.1.2",
     "less": "^3.9.0",
     "lodash": "^4.17.11",
     "mysql": "^2.17.1",

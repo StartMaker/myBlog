@@ -1,10 +1,11 @@
 import React from 'react';
 import {hot} from "react-hot-loader";
 import Homepage from './pages/homepage';
-import {Switch, Route} from 'react-router-dom';
+import NotFound from '&components/notfound';
+import {Switch, Route, Redirect} from 'react-router-dom';
 //引入styles
 import withStyles from 'isomorphic-style-loader/withStyles';
-import resetStyle from './static/styles/reset.less';
+import resetStyles from './static/styles/reset.less';
 import styles from './styles.less';
 
 class App extends React.Component{
@@ -15,10 +16,11 @@ class App extends React.Component{
   render(){
     return (
       <Switch>
-        <Route path='/home' component={Homepage}/>
+        <Route path="/home" component={Homepage}/>
+        <Route path="*" component={NotFound}/>
       </Switch>
     )
   }
 }
 
-export default hot(module)(withStyles(styles, resetStyle)(App));
+export default hot(module)(withStyles(styles, resetStyles)(App));

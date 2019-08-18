@@ -1,0 +1,52 @@
+@import 'static/styles/helpers';
+
+.ant-layout{
+  .ant-layout-header{
+    background-color: rgb(240, 242, 245);
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+    .blog-nav{
+      .height(103);
+      .line-height(103);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .blog-nav-title{
+        .font-size(24);
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-weight: 700;
+      }
+      .blog-nav-right{
+        display: flex;
+        align-items: center;
+
+        .blog-nav-menu{
+          .margin-right(20);
+        }
+        .bog-nav-menu-trigger{
+          .width(32);
+          .height(32);
+          .line-height(0);
+          .font-size(28);
+          transform: rotateZ(0deg);
+          transition: 0.4s;
+          //overflow: hidden;
+          cursor: pointer;
+          padding: 0;
+          background-color: transparent;
+          border: none;
+          outline: none;
+        }
+      }
+      .bog-nav-menu-action{
+        .bog-nav-menu-trigger{
+          transform: rotateZ(360deg);
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}

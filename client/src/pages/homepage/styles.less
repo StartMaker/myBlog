@@ -1,4 +1,12 @@
-.ant-layout-header{
-  display: flex;
-  justify-content: space-between;
+.function{
+  .px2rem(@px){
+    return : unit(@px*320/@designWidth/20 , rem);
+  }
 }
+@designWidth: 980;
+//.container{
+//  background-color: #007bff;
+//}
+//.blog-nav{
+//  background-color: #ddee00;
+//}

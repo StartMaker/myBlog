@@ -88,6 +88,10 @@ const config = webpackMerge(baseConfig, {
               plugins: [
                 new LessPluginFunctions()
               ],
+              paths:[
+                path.join(__dirname, '../client/src'),
+                path.join(__dirname, '../node_modules')
+              ],
               javascriptEnabled: true
             }
           }
