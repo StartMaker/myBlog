@@ -25,6 +25,10 @@ class Header extends Component {
     });
   };
 
+  componentDidMount() {
+    console.log(this);
+  }
+
   render() {
     console.log(this);
     const {menuVisible} = this.state;

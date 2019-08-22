@@ -41,6 +41,6 @@ app.use(history({
   ]
 }));
 
-app.listen(3000, async ctx =>{
-  console.log('listen to 3000');
+app.listen(3100, async ctx =>{
+  console.log('listen to 3100');
 });
