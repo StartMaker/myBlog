@@ -25,12 +25,7 @@ class Header extends Component {
     });
   };
 
-  componentDidMount() {
-    console.log(this);
-  }
-
   render() {
-    console.log(this);
     const {menuVisible} = this.state;
     const {menuVisibleAction} = this;
     const {location} = this.props;
@@ -64,6 +59,15 @@ class Header extends Component {
             </button>
           </div>
         </nav>
+        <div className="blog-theme">
+          <div className="blog-theme-left">
+            <div className="blog-theme-description">
+              <h3 className="description-title">HELLO，<br/>I AM MAKX REZ...</h3>
+              <p className="description-content">Professional _web designer & developer</p>
+              <a className="about-me" href="/aboutMe">ABOUT ME_</a>
+            </div>
+          </div>
+        </div>
       </Layout.Header>
     )
   }

@@ -1,32 +1,32 @@
 @import 'static/styles/helpers';
 
-.ant-layout{
-  .ant-layout-header{
+.ant-layout {
+  .ant-layout-header {
     background-color: rgb(240, 242, 245);
     height: auto;
     padding-left: 0;
     padding-right: 0;
 
-    .blog-nav{
+    .blog-nav {
       .height(103);
       .line-height(103);
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .blog-nav-title{
+      .blog-nav-title {
         .font-size(24);
         font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         font-weight: 700;
       }
-      .blog-nav-right{
+      .blog-nav-right {
         display: flex;
         align-items: center;
 
-        .blog-nav-menu{
+        .blog-nav-menu {
           .margin-right(20);
         }
-        .bog-nav-menu-trigger{
+        .bog-nav-menu-trigger {
           .width(32);
           .height(32);
           .line-height(0);
@@ -41,10 +41,32 @@
           outline: none;
         }
       }
-      .bog-nav-menu-action{
-        .bog-nav-menu-trigger{
+      .bog-nav-menu-action {
+        .bog-nav-menu-trigger {
           transform: rotateZ(360deg);
           transition: 0.4s;
+        }
+      }
+    }
+    .blog-theme {
+      display: flex;
+
+      .blog-theme-description {
+        font-family: "Dosis", sans-serif;
+        letter-spacing: 2px;
+
+        .description-title {
+          .font-size(36);
+          font-weight: 400;
+          line-height: 1.5;
+          margin-bottom: 0;
+        }
+        .description-content {
+          .font-size(18);
+        }
+        .about-me{
+          .font-size(16);
+          font-weight: 600;
         }
       }
     }
