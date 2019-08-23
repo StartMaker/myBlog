@@ -33,7 +33,6 @@
           .font-size(28);
           transform: rotateZ(0deg);
           transition: 0.4s;
-          //overflow: hidden;
           cursor: pointer;
           padding: 0;
           background-color: transparent;
@@ -50,23 +49,57 @@
     }
     .blog-theme {
       display: flex;
+      justify-content: space-between;
 
-      .blog-theme-description {
-        font-family: "Dosis", sans-serif;
-        letter-spacing: 2px;
+      .blog-theme-left {
+        //position: relative;
+        z-index: 2;
+        .blog-theme-description {
+          font-family: "Dosis", sans-serif;
+          letter-spacing: 2px;
+          .margin-top(150);
+          .margin-bottom(150);
 
-        .description-title {
-          .font-size(36);
-          font-weight: 400;
-          line-height: 1.5;
-          margin-bottom: 0;
+          .description-title {
+            .font-size(36);
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 0;
+          }
+          .description-content {
+            .font-size(18);
+          }
+          .about-me{
+            .font-size(16);
+            font-weight: 600;
+          }
         }
-        .description-content {
-          .font-size(18);
+      }
+      .blog-theme-right {
+        .margin-left(150);
+        .margin-top(-30);
+        position: absolute;
+        z-index: 1;
+
+        .blog-theme-img {
+          .width(517);
+          .height(546);
+          z-index: -1;
         }
-        .about-me{
-          .font-size(16);
-          font-weight: 600;
+        .blog-contract-information {
+          position: relative;
+          z-index: 10;
+          .top(-30);
+          .left(360);
+          .width(300);
+
+          &:before {
+            content: "";
+            .width(41);
+            height: 1px;
+            background-color: #6c757d;
+            display: block;
+          }
         }
       }
     }

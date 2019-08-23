@@ -9,6 +9,7 @@ import withStyles from 'isomorphic-style-loader/withStyles';
 import MenuIcon from '&components/menu-icon';
 import Menu from '&components/menu';
 import styles from './styles.less';
+import themeImg from '&static/images/theme.png';
 
 class Header extends Component {
   constructor(props) {
@@ -66,6 +67,12 @@ class Header extends Component {
               <p className="description-content">Professional _web designer & developer</p>
               <a className="about-me" href="/aboutMe">ABOUT ME_</a>
             </div>
+          </div>
+          <div className="blog-theme-right">
+            <img className="blog-theme-img" src={themeImg} title="my blog" alt="my blog"/>
+            <ul className="blog-contract-information">
+                <li></li>
+            </ul>
           </div>
         </div>
       </Layout.Header>
