@@ -38,9 +38,9 @@ class HomeContent extends Component{
         <main>
           <Switch>
             {/*<Route path="/home" component*/}
-            <Route path="/home" component={Active}/>
-            <Route path="/home/active" component={Active}/>
-            {/*<Redirect from="/home/active" to="/home" exact/>*/}
+            {/*<Redirect from="/home" to="/home/active" exact/>*/}
+            <Route exact path="/home" component={Active}/>
+            <Route path="/home/active" component={<div/>}/>
           </Switch>
         </main>
       </Layout.Content>
