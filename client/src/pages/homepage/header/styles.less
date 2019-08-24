@@ -6,6 +6,7 @@
     height: auto;
     padding-left: 0;
     padding-right: 0;
+    user-select: none;
 
     .blog-nav {
       .height(103);
@@ -49,6 +50,7 @@
     }
     .blog-theme {
       display: flex;
+      position: relative;
       justify-content: space-between;
 
       .blog-theme-left {
@@ -76,29 +78,39 @@
         }
       }
       .blog-theme-right {
-        .margin-left(150);
-        .margin-top(-30);
+        .right(30);
         position: absolute;
         z-index: 1;
 
         .blog-theme-img {
           .width(517);
           .height(546);
+          .margin-top(-30);
           z-index: -1;
         }
-        .blog-contract-information {
-          position: relative;
+        .blog-contract {
+          position: absolute;
           z-index: 10;
-          .top(-30);
-          .left(360);
-          .width(300);
+          .right(0);
+          .top(390);
 
           &:before {
             content: "";
             .width(41);
-            height: 1px;
-            background-color: #6c757d;
-            display: block;
+            border: 1px dashed #6c757d;
+            display: inline-block;
+          }
+          .blog-contract-information {
+            .font-size(20);
+            color: #6c757d;
+            display: inline-block;
+            cursor: pointer;
+            .margin-left(15);
+            transition: 0.2s;
+
+            &:hover {
+              color: #000;
+            }
           }
         }
       }

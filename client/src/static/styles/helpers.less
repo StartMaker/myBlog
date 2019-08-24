@@ -66,9 +66,21 @@
     left: unit(@px, px);
   }
 }
+.right(@px) {
+  right: unit(@px*320/@designWidth/20 , rem);
+  @media (min-width:980px) {
+    right: unit(@px, px);
+  }
+}
 .top(@px) {
   top: unit(@px*320/@designWidth/20 , rem);
   @media (min-width:980px) {
     top: unit(@px, px);
+  }
+}
+.bottom(@px) {
+  bottom: unit(@px*320/@designWidth/20 , rem);
+  @media (min-width:980px) {
+    bottom: unit(@px, px);
   }
 }

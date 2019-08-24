@@ -1,14 +1,13 @@
-//modules
-import React, {Component} from 'react';
-import { Layout } from 'antd';
+import React, { Component } from 'react';
+import { Layout, Divider } from 'antd';
 import SEOContainer from '&components/seo-container';
 import withStyles from 'isomorphic-style-loader/withStyles';
-const {Content} = Layout;
 import antdLayoutStyle from 'antd/lib/layout/style/index.css';
+import antdDividerStyle from 'antd/lib/divider/style/index.css';
 
-//components
 import styles from './styles.less';
 import Header from './header';
+import Content from './content';
 
 // console.log(styles._getCss());
 
@@ -23,6 +22,8 @@ class Homepage extends Component {
         <Layout>
           <div className="container">
             <Header/>
+            <Divider dashed/>
+            <Content/>
           </div>
         </Layout>
       </SEOContainer>
@@ -30,4 +31,6 @@ class Homepage extends Component {
   }
 }
 
-export default withStyles(styles, antdLayoutStyle)(Homepage);
+export default withStyles(
+  styles, antdLayoutStyle, antdDividerStyle
+)(Homepage);

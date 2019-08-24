@@ -1,11 +1,9 @@
-//modules
 import React, {Component} from 'react';
 import {Layout} from 'antd';
-import {withRouter} from 'react-router-dom';
 import IconFont from '&static/icons';
 import withStyles from 'isomorphic-style-loader/withStyles';
+import {withRouter} from 'react-router-dom';
 
-//components
 import MenuIcon from '&components/menu-icon';
 import Menu from '&components/menu';
 import styles from './styles.less';
@@ -35,7 +33,8 @@ class Header extends Component {
         <nav className="blog-nav">
           <div className="blog-nav-title">myBlog</div>
           <div className={menuVisible?"blog-nav-right bog-nav-menu-action":"blog-nav-right"}>
-            {menuVisible&&(
+            {
+              menuVisible&&(
                 <Menu className="blog-nav-menu" dataSource={[
                   {
                     label: '首页',
@@ -50,7 +49,6 @@ class Header extends Component {
                 ]}/>
               )
             }
-            {/*// {true&&}*/}
             <button
               className="bog-nav-menu-trigger"
               type="button"
@@ -63,15 +61,23 @@ class Header extends Component {
         <div className="blog-theme">
           <div className="blog-theme-left">
             <div className="blog-theme-description">
-              <h3 className="description-title">HELLO，<br/>I AM MAKX REZ...</h3>
+              <h3 className="description-title">HELLO，<br/>I AM START MAKER...</h3>
               <p className="description-content">Professional _web designer & developer</p>
               <a className="about-me" href="/aboutMe">ABOUT ME_</a>
             </div>
           </div>
           <div className="blog-theme-right">
             <img className="blog-theme-img" src={themeImg} title="my blog" alt="my blog"/>
-            <ul className="blog-contract-information">
-                <li></li>
+            <ul className="blog-contract">
+              <li className="blog-contract-information">
+                <IconFont type="icon-github"/>
+              </li>
+              <li className="blog-contract-information">
+                <IconFont type="icon-vx"/>
+              </li>
+              <li className="blog-contract-information">
+                <IconFont type="icon-qq"/>
+              </li>
             </ul>
           </div>
         </div>
@@ -80,4 +86,6 @@ class Header extends Component {
   }
 }
 
-export default withStyles(styles)(withRouter(Header));
+export default withStyles(
+  styles
+)(withRouter(Header));
