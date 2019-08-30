@@ -20,7 +20,7 @@ const  config = webpackMerge(baseConfig, {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         hot: true,
-        host: '172.22.122.106',
+        host: '0.0.0.0',
         progress: true,
         inline: true,
         port: 3000,
@@ -28,7 +28,10 @@ const  config = webpackMerge(baseConfig, {
         historyApiFallback: true
     },
     entry: {
-        client: [path.resolve(__dirname, "../client/render/development")]
+        client: [
+            'react-hot-loader/patch',
+            path.resolve(__dirname, "../client/render/development")
+        ]
     },
     devtool: 'source-map',
     module: {
@@ -98,18 +101,19 @@ const  config = webpackMerge(baseConfig, {
             },
         }),
         new webpack.DllReferencePlugin({
+            context: __dirname,
             manifest: require('./dll/vendors.manifest.json')
         }),
-        new AddAssetHtmlPlugin([
-            {
-                // 要添加到编译中的文件的绝对路径，以及生成的HTML文件。支持 globby 字符串
-                filepath: require.resolve('./dll/vendors.dll'),
-                // 文件输出目录
-                outputPath: './dist',
-                // 脚本或链接标记的公共路径
-                publicPath: './dist'
-            }
-        ]),
+        // new AddAssetHtmlPlugin([
+        //     {
+        //         // 要添加到编译中的文件的绝对路径，以及生成的HTML文件。支持 globby 字符串
+        //         filepath: require.resolve('./dll/vendors.dll'),
+        //         // 文件输出目录
+        //         outputPath: './dist',
+        //         // 脚本或链接标记的公共路径
+        //         publicPath: './dist'
+        //     }
+        // ]),
         // new CleanWebpackPlugin(['dist'],{
         //     root: path.resolve(__dirname, '..')
         // }),
