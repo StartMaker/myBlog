@@ -7,6 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LessPluginFunctions = require('less-plugin-functions');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const proxy = require('./proxy');
 
 const  config = webpackMerge(baseConfig, {
     mode: 'development',
@@ -25,7 +26,14 @@ const  config = webpackMerge(baseConfig, {
         inline: true,
         port: 3000,
         compress: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        // proxy: {
+        //     '/': {
+        //         bypass: function (res, req, webpackConfig) {
+        //             req.
+        //         }
+        //     }
+        // }
     },
     entry: {
         client: [

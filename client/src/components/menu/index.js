@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.less';
 import withStyles from 'isomorphic-style-loader/withStyles';
+import { Link } from 'react-router-dom';
 
 class Menu extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Menu extends React.Component {
       }
       return (
         <li className="menu-item" key={item.to}>
-          <a href={item.to} className="menu-item-link">{item.label}</a>
+          <Link to={item.to} className="menu-item-link">{item.label}</Link>
         </li>
       );
     });

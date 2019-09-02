@@ -8,6 +8,15 @@ import antdDividerStyle from 'antd/lib/divider/style/index.css';
 import styles from './styles.less';
 import Header from './header';
 import Content from './content';
+import axios from 'axios';
+
+axios.get('/api/login')
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 
 // console.log(styles._getCss());
 
