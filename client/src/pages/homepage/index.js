@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Divider } from 'antd';
 import SEOContainer from '&components/seo-container';
-import withStyles from 'isomorphic-style-loader/withStyles';
+import withStyles from '&components/withStyles';
 import antdLayoutStyle from 'antd/lib/layout/style/index.css';
 import antdDividerStyle from 'antd/lib/divider/style/index.css';
 
@@ -21,25 +21,25 @@ axios.get('/api/login')
 // console.log(styles._getCss());
 
 class Homepage extends Component {
-  constructor(props) {
-    super(props);
-  };
+    constructor(props) {
+        super(props);
+    };
 
-  render() {
-    return (
-      <SEOContainer title="我的博客-首页" description="我的博客首页">
-        <Layout>
-          <div className="container">
-            <Header/>
-            <Divider dashed/>
-            <Content/>
-          </div>
-        </Layout>
-      </SEOContainer>
-    )
-  }
+    render() {
+        return (
+            <SEOContainer title="我的博客-首页" description="我的博客首页">
+                <Layout>
+                    <div className="container">
+                        <Header/>
+                        <Divider dashed/>
+                        <Content/>
+                    </div>
+                </Layout>
+            </SEOContainer>
+        )
+    }
 }
 
 export default withStyles(
-  styles, antdLayoutStyle, antdDividerStyle
+    styles, antdLayoutStyle, antdDividerStyle
 )(Homepage);
