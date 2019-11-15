@@ -12,7 +12,6 @@ const koa_static = require('koa-static');
 app.use(koa_static(path.join(__dirname, '../static'), {
     // maxage: 1000 * 60 * 60 * 24 * 365,
     maxAge: 0,
-    maxage: 0,
     defer: false,
     gzip: true,
     // setHeaders: (res,path) => {

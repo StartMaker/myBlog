@@ -7,13 +7,13 @@ import {StaticRouter as Router} from 'react-router-dom';
 import StyleContext from 'isomorphic-style-loader/StyleContext';
 
 export default (location, context, insertCss) => {
-  return (
-    <StyleContext.Provider value={{insertCss}}>
-      <ConfigProvider>
-        <Router context={context} location={location}>
-          <App/>
-        </Router>
-      </ConfigProvider>
-    </StyleContext.Provider>
-  )
+    return (
+        <StyleContext.Provider value={{insertCss}}>
+            <ConfigProvider>
+                <Router context={context} location={location}>
+                    <App/>
+                </Router>
+            </ConfigProvider>
+        </StyleContext.Provider>
+    )
 };

@@ -2,6 +2,7 @@ import {render} from 'react-dom';
 import React from 'react';
 import App from '../src/index.js';
 import {ConfigProvider} from 'antd';
+import {Provider} from 'react-redux';
 import 'hotcss/src/hotcss';
 import {BrowserRouter as Router} from 'react-router-dom';
 import StyleContext from 'isomorphic-style-loader/StyleContext';

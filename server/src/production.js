@@ -26,21 +26,6 @@ app.use(koa_static(path.join(__dirname, '../static'), {
 const setRouter = require('../router');
 setRouter(app);
 
-//history router配置
-const history = require('connect-history-api-fallback');
-app.use(history({
-  rewrites: [
-    {
-      from: '/',
-      to: '/home'
-    },
-    // {
-    //   from: /\/*/,
-    //   to: /\/notfound/
-    // }
-  ]
-}));
-
-app.listen(3100, async ctx =>{
+app.listen(3100, '0.0.0.0', async ctx =>{
   console.log('listen to 3100');
 });

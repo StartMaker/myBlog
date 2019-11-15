@@ -18,6 +18,7 @@ koaWebpack({
   },
   hotClient: {
     logLevel: 'error',
+    autoConfigure: false,
     https: false,
     reload: false,
     hmr: true
@@ -36,6 +37,6 @@ koaWebpack({
   });
 
 //监听3000端口
-app.listen(3000, async ctx => {
-  console.log('listen to 3000');
+app.listen(3001, async ctx => {
+  console.log('listen to 3001');
 });

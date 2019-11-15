@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {Layout} from 'antd';
 import IconFont from '&static/icons';
 import withStyles from 'isomorphic-style-loader/withStyles';
 import {withRouter, Link} from 'react-router-dom';
+import axios from '&helpers/axios';
 
 import MenuIcon from '&components/menu-icon';
 import Menu from '&components/menu';
@@ -13,28 +14,37 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            menuVisible: false
+            nav: {
+                visible: false
+            }
         }
     };
 
     menuVisibleAction = () => {
-        const {menuVisible} = this.state;
-        this.setState({
-            menuVisible: !menuVisible
-        });
+        const {nav} = this.state;
+        nav.visible = !nav.visible;
+        this.setState({nav});
     };
 
+    componentDidMount() {
+        // axios.post('/login')
+    }
+
     render() {
-        const {menuVisible} = this.state;
+        const {nav} = this.state;
         const {menuVisibleAction} = this;
         const {location} = this.props;
         return (
             <Layout.Header>
                 <nav className="blog-nav">
-                    <div className="blog-nav-title">myBlog</div>
-                    <div className={menuVisible?"blog-nav-right bog-nav-menu-action":"blog-nav-right"}>
+                    <div className="blog-nav-title">
+                        <Link to="/login">登录</Link>
+                        <span>.</span>
+                        <Link to="/register">注册</Link>
+                    </div>
+                    <div className={nav.visible ? 'blog-nav-right' : 'blog-nav-right bog-nav-menu-action'}>
                         {
-                            menuVisible&&(
+                            nav.visible && (
                                 <Menu className="blog-nav-menu" dataSource={[
                                     {
                                         label: '首页',
@@ -54,7 +64,7 @@ class Header extends Component {
                             type="button"
                             title="菜单"
                             onClick={menuVisibleAction}>
-                            {!menuVisible?<MenuIcon/>:<IconFont type="icon-close"/>}
+                            {nav.visible ? <IconFont type="icon-close"/> : <MenuIcon/>}
                         </button>
                     </div>
                 </nav>

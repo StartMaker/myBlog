@@ -1,4 +1,3 @@
-//客户端代码打包 production
 const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
@@ -9,12 +8,12 @@ const LessPluginFunctions = require('less-plugin-functions');
 const config = webpackMerge(baseConfig, {
     mode: 'production',
     output: {
-        publicPath: "/",
+        publicPath: '/',
         path: path.join(__dirname, '../server/static'),
         filename: '[name].js'
     },
     entry: {
-        clientRender: path.resolve(__dirname, "../client/render/production.client.js")
+        clientRender: path.resolve(__dirname, '../client/render/client.js')
     },
     // externals: [/\.css$/,/\.sass$/,/\.jpg$/],
     module: {
@@ -43,7 +42,7 @@ const config = webpackMerge(baseConfig, {
                             sourceMap: false
                         }
                     },
-                     'postcss-loader'
+                    'postcss-loader'
                 ]
             },
             // {
@@ -106,7 +105,7 @@ const config = webpackMerge(baseConfig, {
             cacheGroups: {
                 vendor: {
                     test: /\.js$/,
-                    chunks: "all", //表示显示块的范围，有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为all;
+                    chunks: 'all', //表示显示块的范围，有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为all;
                     enforce: true
                 },
             }

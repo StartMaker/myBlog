@@ -10,7 +10,7 @@ module.exports = {
             {
                 test:/\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: 'HappyPack/loader?id=babel'
+                use: 'happypack/loader?id=babel'
             },
             {
                 test: /\.(ts|tsx)?$/,
@@ -23,11 +23,12 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [".js", ".json", ".jsx",".ts",".tsx"],
+        extensions: ['.js', '.json', '.jsx','.ts','.tsx'],
         alias: {
             '&static': path.resolve(__dirname, '../client/src/static'),
             '&components': path.resolve(__dirname, '../client/src/components'),
-            '&store': path.resolve(__dirname, '../client/store')
+            '&store': path.resolve(__dirname, '../client/store'),
+            '&helpers': path.resolve(__dirname, '../client/src/helpers')
         }
     },
     plugins: [

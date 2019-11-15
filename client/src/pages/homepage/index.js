@@ -10,20 +10,22 @@ import Header from './header';
 import Content from './content';
 import axios from 'axios';
 
-axios.get('/api/login')
-    .then(data => {
-      console.log(data);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-
 // console.log(styles._getCss());
 
 class Homepage extends Component {
     constructor(props) {
         super(props);
     };
+
+    componentDidMount() {
+        axios.get('/login')
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 
     render() {
         return (

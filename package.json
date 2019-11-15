@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config=./config/webpack.development.js",
-    "start": "nodemon ./server/src/development.js",
-    "build": "webpack --config=./config/webpack.production.server.js&&webpack --config=./config/webpack.production.client.js",
+    "server": "nodemon ./server/src/onlyServerDevelopment.js",
+    "start": " webpack-dev-server --config=./config/webpack.development.js",
+    "test": "nodemon ./server/src/development.js",
+    "build": "webpack --config=./config/webpack.server.js && webpack --config=./config/webpack.client.js",
     "test:build": "nodemon ./server/src/production.js",
     "dll": "webpack --config=./config/webpack.dll.js"
   },

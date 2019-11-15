@@ -12,7 +12,7 @@ const proxy = require('./proxy');
 const  config = webpackMerge(baseConfig, {
     mode: 'development',
     output: {
-        publicPath: "/",
+        publicPath: '/',
         filename: '[name].js',
         path: path.join(__dirname, './dist'),
         libraryTarget: 'var',
@@ -27,18 +27,16 @@ const  config = webpackMerge(baseConfig, {
         port: 3000,
         compress: true,
         historyApiFallback: true,
-        // proxy: {
-        //     '/': {
-        //         bypass: function (res, req, webpackConfig) {
-        //             req.
-        //         }
-        //     }
-        // }
+        proxy: {
+            '/api/': {
+                target: 'http://127.0.0.1:3100'
+            }
+        }
     },
     entry: {
         client: [
             'react-hot-loader/patch',
-            path.resolve(__dirname, "../client/render/development")
+            path.resolve(__dirname, '../client/render/development')
         ]
     },
     devtool: 'source-map',
@@ -62,10 +60,10 @@ const  config = webpackMerge(baseConfig, {
             {
                 test: /\.less$/,
                 use: [
-                    "isomorphic-style-loader",
-                    "css-loader",
+                    'isomorphic-style-loader',
+                    'css-loader',
                     {
-                        loader:"less-loader",
+                        loader: 'less-loader',
                         options: {
                             plugins: [
                                 new LessPluginFunctions()
@@ -96,10 +94,10 @@ const  config = webpackMerge(baseConfig, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./client/src/index.html",
+            template: './client/src/index.html',
             inject: true,
             favicon: './client/src/static/images/logo.jpg',
-            filename: "index.html",
+            filename: 'index.html',
             hash: true
             // loading: loading
         }),

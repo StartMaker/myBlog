@@ -1,15 +1,15 @@
 const Router = require('koa-router');
 const router = new Router();
-// const layout = require('../../client/render/production.server');
 const layout = require('../static/serverRender');
 // const hotcss = require('hotcss');
 
 const {renderToString} = require('react-dom/server');
 
-router.get('/*', async ctx => {
+router.get('/*', async (ctx, next) => {
   const css = new Set();
   const insertCss = (...styles) => {styles.forEach((style) => {css.add(style._getCss())})};
   const content = renderToString(layout.default(ctx.request.url, {}, insertCss));
+
   let html = `
         <!DOCTYPE html>
         <html lang="en">
@@ -116,8 +116,8 @@ router.get('/*', async ctx => {
                 window.hotcss = hotcss; 
             </script>
             <div id="root">${content}</div>
-            <script src="/clientRender.js" type="text/javascript"></script>
-            <script src="/vendor~clientRender.js" type="text/javascript"></script>
+            <script src="/clientServer.js" type="text/javascript"></script>
+            <script src="/vendor~clientServer.js" type="text/javascript"></script>
         </body>
         </html>
         `;

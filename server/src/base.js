@@ -9,8 +9,8 @@ module.exports = app => {
     threshold: 1024
   }));
   //post body
-  const koa_bodyparser = require('koa-bodyparser');
-  app.use(koa_bodyparser());
+  const bodyparser = require('koa-bodyparser');
+  app.use(bodyparser());
   //session
   const koa_session = require('koa-session');
   app.use(koa_session({

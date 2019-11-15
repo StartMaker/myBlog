@@ -4,9 +4,9 @@ const MYSQL = require('mysql');
 const mysql = MYSQL.createPool({
   host: '127.0.0.1',
   port: 3306,
-  user: 'root',
-  password: 'zhizhuo1997',
-  database: 'blog'
+  user: 'ltp',
+  password: '12345678',
+  database: 'myblog'
 });
 
 function runSql(sql) {
