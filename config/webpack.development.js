@@ -39,7 +39,7 @@ const  config = webpackMerge(baseConfig, {
             path.resolve(__dirname, '../client/render/development')
         ]
     },
-    devtool: 'source-map',
+    devtool: 'cheap-eval-source-map',
     module: {
         rules: [
             {
