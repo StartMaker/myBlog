@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d07d49fd-bc82-4525-8782-7014d4c5adc7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/webpack.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
       <workItem from="1573724683272" duration="4657000" />
       <workItem from="1573783775990" duration="14856000" />
       <workItem from="1574041890066" duration="1873000" />
-      <workItem from="1574129137501" duration="600000" />
+      <workItem from="1574129137501" duration="1305000" />
     </task>
     <servers />
   </component>

@@ -130,7 +130,7 @@ const config = webpackMerge(baseConfig, {
     },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
-        new CleanWebpackPlugin(['static'],{
+        new CleanWebpackPlugin(['static'], {
             root: path.resolve(__dirname, '../server'),
         }),
         new webpack.DefinePlugin({
