@@ -1,14 +1,38 @@
 @import 'static/styles/helpers';
 
 .ant-layout-content {
-  .content-nav{
+  .article-nav{
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    padding-inline-start: 0;
+    font-size: 0;
+    //justify-content: space-between;
+    .padding-left(10);
+    border-bottom: 1px solid rgba(144, 144, 144, 0.3);
 
     .content-nav-item {
-      color: #212529;
-      .font-size(16);
+      .margin-left(20);
+      .margin-bottom(20);
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
+    .content-nav-link {
+      color: #212529;
+      .font-size(20);
+      font-weight: bold;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .content-nav-link-action {
+      color: #007bff;
+    }
+  }
+  .article-main {
+
   }
 }

@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
 import withStyles from '&components/withStyles';
 import { Layout } from 'antd';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, Link, Redirect, withRouter } from 'react-router-dom';
 
 import styles from './styles.less';
-import Active from './active';
+import Active from './children-page/active';
 import Active2 from './active2';
 
 class HomeContent extends Component{
     constructor(props) {
         super(props);
     }
-    createNav = navOptions => navOptions.map(item => (
-        <li key={item.url}>
-            <Link className="content-nav-item" to={item.url}>
-            {item.label}
-        </Link>
-        </li>
-    ));
+    createNav = navOptions => {
+        const { location } = this.props;
+        return navOptions.map(item => (
+                  <li className="content-nav-item" key={item.url}>
+                      <Link
+                          className={location.pathname === item.url ? 'content-nav-link content-nav-link-action' : 'content-nav-link'}
+                          to={item.url}>
+                          {item.label}
+                      </Link>
+                  </li>
+                ));
+    };
 
     render() {
         return (
             <Layout.Content>
-                <ul className="content-nav">
+                <ul className="article-nav">
                     {
                         this.createNav([
                                 {
@@ -32,17 +37,20 @@ class HomeContent extends Component{
                                 {
                                     label: '专栏',
                                     url: '/home/personal-column'
+                                },
+                                {
+                                    label: '收藏',
+                                    url: '/home/personal-collection'
                                 }
                             ])
                     }
                 </ul>
-                <main>
+                <main className="article-main">
                     <Switch>
-                        {/*<Route path="/home" component*/}
-                        {/*<Redirect from="/home" to="/home/active" exact/>*/}
-                        {/*<Redirect from="/home/active" to="/home"/>*/}
-                        <Route path="/home/active" component={Active}/>
-                        <Route pcth="/home/personal-column" component={Active2}/>
+                        <Route path="/home/active" component={Active} exact/>
+                        <Route path="/home/personal-column" component={Active2}/>
+                        <Route path="/home/personal-collection" component={Active}/>
+                        <Redirect from="/home" to="/home/active"/>
                     </Switch>
                 </main>
             </Layout.Content>
@@ -52,4 +60,4 @@ class HomeContent extends Component{
 
 export default withStyles(
     styles
-)(HomeContent);
+)(withRouter(HomeContent));

@@ -20,7 +20,7 @@ if (cluster.isMaster) {
   // In this case it is an HTTP server
   http.createServer((req, res) => {
     res.writeHead(200);
-    res.end('hello world\n');
+    res.end('hello world');
   }).listen(8000);
 
   console.log(`Worker ${process.pid} started`);

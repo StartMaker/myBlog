@@ -67,7 +67,7 @@ const config = webpackMerge(baseConfig, {
                     {
                         loader: 'css-loader',
                         options: {
-                            minimize: false,
+                            minimize: true,
                             sourceMap: false
                         }
                     },
@@ -78,6 +78,7 @@ const config = webpackMerge(baseConfig, {
                             plugins: [
                                 new LessPluginFunctions()
                             ],
+                            //匹配import引入的根路径
                             paths:[
                                 path.join(__dirname, '../client/src'),
                                 path.join(__dirname, '../node_modules')
@@ -90,8 +91,6 @@ const config = webpackMerge(baseConfig, {
         ]
     },
     optimization: {
-        // 压缩js、css
-        minimizer: [],
         //     new UglifyJsPlugin({
         //         uglifyOptions: {
         //             ie8: true,

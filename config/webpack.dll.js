@@ -4,7 +4,7 @@ const FirendlyErrorePlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
   entry: {
     vendors: ['react-helmet', 'antd', 'react', 'redux', 'react-redux', 'react-router', 'react-router-dom', 'react-dom']

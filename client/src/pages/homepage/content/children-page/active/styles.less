@@ -1,0 +1,81 @@
+@import 'static/styles/helpers';
+
+.article-card {
+  .font-size(20);
+  .padding(40, 20);
+
+  .article-card-header {
+    .img {
+      .width(40);
+      .height(40);
+      border-radius: 50%;
+      .margin-right(20);
+    }
+    .description {
+      opacity: 0.6;
+    }
+    .name {
+      .margin-right(5);
+    }
+    .date {
+      .margin-left(5);
+    }
+  }
+  .article-card-body {
+    .padding-top(10);
+
+    .title {
+      .font-size(30);
+      display: block;
+      font-weight: bold;
+      color: #212529;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+    .part-article {
+      opacity: 0.7;
+      .margin-top(10);
+    }
+  }
+  .article-card-footer {
+    .margin-top(25);
+
+    .icon-container {
+      line-height: 1;
+      display: inline-block;
+      .padding-left(10);
+      .padding-right(10);
+      .padding-top(5);
+      .padding-bottom(5);
+      border: 1px solid lightgray;
+      .font-size(15);
+      opacity: 0.7;
+      cursor: pointer;
+
+      & + .icon-container {
+        border-left: none;
+      }
+      &:hover {
+        opacity: 0.9;
+        background-color: lightgray;
+        transition: 0.5s;
+      }
+      .anticon {
+        .margin-right(3);
+        color: gray;
+        vertical-align: middle;
+        .font-size(13);
+      }
+      .font {
+        .font-size(10);
+        vertical-align: middle;
+        color: gray;
+      }
+    }
+  }
+}

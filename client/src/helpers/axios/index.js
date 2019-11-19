@@ -8,7 +8,7 @@ axios.interceptors.request.use(function (config) {
         // 'Authorization': sessionStorage.getItem('Authorization')
     };
     config.timeout = 3000;
-    config.baseURL = 'http://172.0.0.1:3000/api';
+    config.baseURL = '/api';
     return config;
 });
 

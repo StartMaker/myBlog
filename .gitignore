@@ -1,24 +1,2 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
-
-# roadhog-api-doc ignore
-/src/utils/request-temp.js
-
-# production
-/dist
-/output
-/client/page/index.tpl
-/client/index.*.js
-/client/index.*.css
-
-# misc
-.DS_Store
-npm-debug.log*
-
-/coverage
-.idea/
-
-
-
