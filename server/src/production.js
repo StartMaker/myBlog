@@ -20,6 +20,12 @@ app.use(koa_static(path.join(__dirname, '../static'), {
   //
   //     }
   // }
+    // setHeaders: (res,path) => {
+  //     res.set('Content-Type','text/javas', 'charset=utf-8');
+  //     if(path.indexOf('css') > -1){
+  //
+  //     }
+  // }
 }));
 
 //配置路由
